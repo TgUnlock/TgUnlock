@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head> <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TELEGRAMUNLOCK</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- уведомление (показываем из JS) -->
+  <div class="toast" id="toast" aria-live="polite" hidden></div>
+
+  <!-- фон: картинка + мягкая «матрица» -->
+  <div class="bg" aria-hidden="true"></div>
+  <canvas class="matrix" id="matrix" aria-hidden="true"></canvas>
+
+  <!-- глобальный SVG-спрайт для glow -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.4" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+   <!-- ВЕРХНЯЯ ПЛАШКА -->
+  <header class="hero no-seam">
+  <div class="container">
+    <!-- НОВЫЙ однострочный техно-заголовок -->
+    <div class="neo-hero">
+      <h1 class="neo-title">TELEGRAM UNLOCK</h1>
+    </div>
+  </div>
+</header>
+
+
+  <main class="container" role="main">
+    <!-- Герой -->
+    <section class="hero" aria-labelledby="hero-title">
+<div id="hero-title" class="disclaimer-badge">Не является VPN</div>
+      <!-- СПИДОМЕТР -->
+      <div class="gauge" aria-labelledby="gauge-title">
+        <h2 id="gauge-title" class="gauge__title"></h2>
+        <div class="gauge__wrap">
+          <canvas id="speedometer" aria-label="Индикатор скорости 0–1200 Кбит/с"></canvas>
+        </div>
+      </div>
+
+      <p class="actions">
+<a href="#install" id="startBtn" class="btn btn--xl">Получить</a>
+        <p class="subtitle">Нажмите кнопку «Получить» и следуйте инструкции</p>
+      </p>
+    </section>
+
+    <!-- Инструкция по установке (показывается после клика) -->
+    <section id="install" class="panel hidden" aria-labelledby="install-title">
+      <div class="badge">Безопасная установка</div>
+      <h2 id="install-title" class="title">Инструкция по установке</h2>
+      <ol class="install__list">
+        <li>Нажмите «Скачать в Google Play» или «Скачать APK» ниже.</li>
+        <li>Если Android спросит — разрешите установку из неизвестных источников (для APK).</li>
+        <li>При завершении установки дайте все разрешения для генерации протокола. </li>
+        <li>После установки ключа Telegram звонки заработают в течении 24 часов.</li>
+      </ol>
+      <div class="download__grid" style="margin-top:14px">
+        <a class="btn btn--store" id="btnPlay" href="https://play.google.com/store/apps" target="_blank" rel="noopener">Скачать в Google&nbsp;Play</a>
+        <a class="btn btn--store" id="btnApk" href="#" target="_blank" rel="noopener">Скачать APK</a>
+      </div>
+      <small class="hint" id="platformHint">Подсказка: на iOS Google Play недоступен. Откройте ссылку с Android-устройства.</small>
+      <div class="quick">
+        <button class="quick__btn" id="copyTg" type="button">Скопировать ссылку Telegram</button>
+      </div>
+    </section>
+
+    <!-- Плюсы приложения -->
+    <section id="steps" class="steps" aria-labelledby="steps-title">
+      <h2 id="steps-title" class="steps__title">✅ Плюсы приложения ✅</h2>
+      <div class="steps__grid">
+        <article class="step reveal">
+          <div class="step__icon">⚙️Надёжность</div>
+          <h3></h3>
+          <p>Работает с любым провайдером по всей России без ограничений.</p>
+        </article>
+        <article class="step reveal">
+          <div class="step__icon">🚀 Без VPN и прокси</div>
+          <h3></h3>
+          <p>Не нужны лишние сервисы и настройки. Никакого поиска новых VPN или прокси.</p>
+        </article>
+        <article class="step reveal">
+          <div class="step__icon">🔒 Безопасность</div>
+          <h3></h3>
+          <p>Не требует лишних разрешений, не собирает данные. Дополнительных действий не требуется.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Надёжность -->
+    <section id="trust" class="trust" aria-label="Почему это надёжно">
+      <article class="trust__item reveal">
+        <div class="trust__icon">📶</div>
+        <h3>Стабильность связи</h3>
+        <p>Работает как оптимизатор — не требует сторонних разрешений и экономит трафик.</p>
+      </article>
+      <article class="trust__item reveal">
+        <div class="trust__icon">🛡️</div>
+        <h3>Приватность</h3>
+        <p>Мы ценим вашу анонимность и конфиденциальность</p>
+      </article>
+      <article class="trust__item reveal">
+        <div class="trust__icon">⚡</div>
+        <h3>Автоматическая выдача</h3>
+        <p>Процесс полностью автоматизирован.</p>
+      </article>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews" aria-labelledby="reviews-title">
+      <h2 id="reviews-title" class="reviews__title">Отзывы</h2>
+      <div class="reviews__grid">
+        <a class="review reveal" href="https://t.me/Vader282828" target="_blank" rel="noopener">
+          <div class="review__avatar">V2</div>
+          <div class="review__body">
+            <div class="review__name">@Vader282828</div>
+            <p>Звонки ожили сразу! Ничего не настраивал — всё само заработало. 👍
+</p>
+          </div>
+        </a>
+        <a class="review reveal" href="https://t.me/SamooboronaTyt" target="_blank" rel="noopener">
+          <div class="review__avatar">ST</div>
+          <div class="review__body">
+            <div class="review__name">@SamooboronaTyt</div>
+            <p>Связь реально чище, голос стал громче и яснее.</p>
+          </div>
+        </a>
+        <a class="review reveal" href="https://t.me/StepaVoin" target="_blank" rel="noopener">
+          <div class="review__avatar">SV</div>
+          <div class="review__body">
+            <div class="review__name">@StepaVoin</div>
+            <p>Даже с моим «хромым» интернетом звонки теперь без срывов. Удивлён!</p>
+          </div>
+        </a>
+        <a class="review reveal" href="https://t.me/irinaaaa12" target="_blank" rel="noopener">
+          <div class="review__avatar">IA</div>
+          <div class="review__body">
+            <div class="review__name">@irinaaaa12</div>
+            <p>Без VPN, без танцев с бубном — просто скачала и пользуюсь.</p>
+          </div>
+        </a>
+        <a class="review reveal" href="https://t.me/AlCapone66666" target="_blank" rel="noopener">
+          <div class="review__avatar">AC</div>
+          <div class="review__body">
+            <div class="review__name">@AlCapone66666</div>
+            <p>Поддержка отвечает быстро. Связь стабильная, без обрывов.</p>
+          </div>
+        </a>
+        <a class="review reveal" href="https://t.me/vladimirrus1124" target="_blank" rel="noopener">
+          <div class="review__avatar">VR</div>
+          <div class="review__body">
+            <div class="review__name">@vladimirrus1124</div>
+            <p>Через пару часов уже звонил без ограничений.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="faq__title">Частые вопросы</h2>
+      <div class="faq__list">
+        <details class="faq__item reveal"><summary>Когда активируется доступ?</summary><div>В течение 24 часов после установки.</div></details>
+        <details class="faq__item reveal"><summary>Нужно ли что-то включать в приложении?</summary><div>Нет. Всё автоматически.</div></details>
+        <details class="faq__item reveal"><summary>Прошло 24 часа, уведомления нет — что делать?</summary><div>Напишите нам в Telegram — поможем.</div></details>
+      </div>
+    </section>
+
+    <!-- Поддержка -->
+    <section id="support" class="support" aria-labelledby="support-title">
+      <h2 id="support-title" class="support__title">Нужна помощь?</h2>
+      <p class="support__text">Если остались вопросы — напишите нам.</p>
+      <p class="support__actions">
+        <a class="btn" href="https://t.me/UNLOCKRUS" target="_blank" rel="noopener">Telegram</a>
+      </p>
+      <small class="hint">Обычно отвечаем в течение нескольких минут.</small>
+    </section>
+
+    <!-- Нижняя навигация -->
+    <nav class="bottom-nav" aria-label="Навигация">
+      <a href="#steps">Как это работает</a>
+      <a href="#trust">Надёжность</a>
+      <a href="#install">Скачать</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Поддержка</a>
+    </nav>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>© 2025 Telegram Unlock. Все права защищены.</p>
+  </footer>
+
+  <a class="fab" href="https://t.me/UNLOCKRUS" target="_blank" rel="noopener" aria-label="Открыть чат в Telegram">💬</a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
