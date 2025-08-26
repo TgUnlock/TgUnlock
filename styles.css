@@ -111,8 +111,8 @@ body{
 /* ===== Панель/инструкция ===== */
 .panel{
   margin:4vh auto 3vh; padding:26px 22px 20px; border-radius:var(--radius-lg);
-  background:var(--panel); border:1px solid rgba(0,209,255,.25);
-  box-shadow:0 0 0 1px rgba(0,209,255,.12) inset, 0 0 22px rgba(0,209,255,.25), 0 0 60px rgba(106,77,252,.15);
+  background:var(--panel); border:4px solid rgb(0, 208, 255);
+  box-shadow:0 0 0 6px rgba(0,208,255,.0.06) inset, 0 0 22px rgba(0,209,255,.25), 0 0 60px rgba(106,77,252,.15);
   text-align:center; position:relative; overflow:hidden;
 }
 .panel::after{
@@ -124,9 +124,9 @@ body{
 @keyframes panel-sheen{ 0%,85%{transform:translateX(-120%)} 100%{transform:translateX(120%)} }
 .badge{
   display:inline-block; padding:6px 12px; border-radius:999px; color:var(--neon);
-  border:1px solid rgba(0,209,255,.35);
+  border:4px solid rgb(0, 208, 255);
   background:linear-gradient(180deg, rgba(0,209,255,.12), rgba(106,77,252,.10));
-  box-shadow:0 0 10px rgba(0,209,255,.35), inset 0 0 10px rgba(0,209,255,.15);
+  box-shadow:0 0 20px rgba(0,209,255,.35), inset 0 0 10px rgba(0,209,255,.15);
   user-select:none;
 }
 .install__list{ text-align:left; max-width:720px; margin:12px auto 0; line-height:1.6; color:var(--text-dim); }
@@ -136,8 +136,8 @@ body{
   display:inline-block; padding:25px 50px; border-radius:999px;
   color:#001018; font-weight:800; text-decoration:none; font-size: 18px; 
   background:radial-gradient(120% 120% at 50% 0%, var(--neon) 0%, var(--neon-2) 80%);
-  border:2px solid rgba(0,209,255,.45);
-  box-shadow:0 0 22px rgba(0,209,255,.75), 0 0 40px rgba(106,77,252,.55);
+  border:4px solid rgba(0,208,255,.95);
+  box-shadow:0 0 22px rgba(0,208,255,.95), 0 0 40px rgba(106,77,252,.55);
   transition:transform .08s ease, filter .08s ease;
   position:relative; overflow:hidden;
 }
@@ -150,7 +150,7 @@ body{
 @keyframes btn-sheen{ 0%,70%{transform:translateX(-120%)} 100%{transform:translateX(120%)} }
 .btn:hover{ filter:brightness(1.08); }
 .btn:active{ transform:translateY(1px); }
-.btn--ghost{ background:rgba(2,10,22,.55); color:var(--text); border:1px solid rgba(0,209,255,.35); box-shadow:0 0 10px rgba(0,209,255,.15); }
+.btn--ghost{ background:rgba(2,10,22,.55); color:var(--text); border:4px solid rgba(0,208,255,.35); box-shadow:0 0 10px rgba(0,209,255,.15); }
 .btn--store{ background:radial-gradient(120% 120% at 50% 0%, var(--neon) 0%, var(--neon-2) 80%); }
 .hint{ display:block; margin-top:8px; color:var(--text-dim); font-size:13px; }
 
@@ -158,7 +158,7 @@ body{
 .quick__btn{
   padding:10px 14px; border-radius:10px; cursor:pointer;
   background:rgba(2,10,22,.55); color:var(--text);
-  border:1px solid rgba(0,209,255,.25); box-shadow:0 0 10px rgba(0,209,255,.12);
+  border:4px solid rgba(0,208,255,.25); box-shadow:0 0 10px rgba(0,209,255,.12);
 }
 .quick__btn:active{ transform:translateY(1px); }
 
@@ -172,7 +172,7 @@ body{
   max-width: 520px;           /* можно оставить 420px, но 520 даст больше воздуха */
   margin: 0 auto;
   background: linear-gradient(180deg, rgba(50, 107, 206, 0.651), rgba(7, 7, 7, 0.55));
-  border: 1px solid rgba(0,209,255,.28);
+  border: 4px solid rgba(0,208,255,.95);
   border-radius: var(--radius-sm);
   padding: 10px 12px 12px;    /* было 6px/2px — даём запас снизу, чтобы дуга не срезалась */
   box-shadow:
@@ -190,13 +190,13 @@ body{
 .steps{ margin:34px auto; text-align:center; }
 .steps__title{ font-size:22px; font-weight:700; margin-bottom:20px; text-shadow:0 0 12px rgba(0,209,255,.45); }
 .steps__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.step{ background:var(--panel); border:1px solid rgba(0,209,255,.25); border-radius:var(--radius-sm); padding:16px; box-shadow:0 0 12px rgba(0,209,255,.15); }
+.step{ background:var(--panel); border:4px solid rgba(0,208,255,.95); border-radius:var(--radius-sm); padding:16px; box-shadow:0 0 12px rgb(0, 208, 255.95); }
 .step__icon{ font-size:26px; margin-bottom:8px; filter:drop-shadow(0 0 8px var(--neon)); }
 .step h3{ margin:6px 0; font-size:16px; }
 .step p{ margin:0; font-size:14px; color:var(--text-dim); }
 
 .trust{ display:grid; gap:16px; margin:18px auto 16px; grid-template-columns:repeat(3,1fr); }
-.trust__item{ background:var(--panel); border:1px solid rgba(0,209,255,.2); border-radius:var(--radius-sm); padding:16px; box-shadow:0 0 12px rgba(0,209,255,.15); }
+.trust__item{ background:var(--panel); border:4px solid rgba(0,208,255,.95); border-radius:var(--radius-sm); padding:45px; box-shadow:0 0 5px rgb(0, 208, 255); }
 .trust__icon{ font-size:22px; margin-bottom:6px; filter:drop-shadow(0 0 10px var(--neon)); }
 .trust__item h3{ margin:0 0 6px; font-size:16px; }
 .trust__item p{ margin:0; color:var(--text-dim); font-size:14px; }
@@ -206,8 +206,8 @@ body{
 .reviews__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .review{
   display:flex; gap:12px; align-items:flex-start; text-decoration:none;
-  background:var(--panel); border:1px solid rgba(0,209,255,.25);
-  border-radius:var(--radius-sm); padding:12px; color:var(--text);
+  background:var(--panel); border:4px solid rgba(0,208,255,.95);
+  border-radius:var(--radius-sm); padding:5px; color:var(--text);
   box-shadow:0 0 12px rgba(0,209,255,.12);
   transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
@@ -378,7 +378,7 @@ html{ scroll-behavior:smooth; }
   margin: 40px auto 22px;          /* чуть больше отступов */
   padding: 24px 48px;              /* больше "подушки" вокруг текста */
   border-radius: 32px;             /* радиус тоже подрос */
-  border: 5px solid rgb(0, 208, 255);
+  border: 4px solid rgb(0, 208, 255,95);
   color: rgb(0, 217, 255);
   font-size: 25px;                 /* БОЛЬШЕ шрифт */
   font-weight: 800;                /* жирнее */
