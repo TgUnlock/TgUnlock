@@ -433,3 +433,96 @@ html{ scroll-behavior:smooth; }
     width: 100%;
   }
 }
+/* Иконка-эмодзи в левом верхнем углу плашки */
+.steps .step{
+  position: relative;
+  padding: 18px 16px 16px 64px; /* место слева под колонку эмодзи */
+  min-height: 88px;             /* чтобы иконка не наезжала на текст */
+}
+
+.steps .step__icon{
+  position: absolute;
+  left: 18px;                   /* общий X — формирует "одну колонку" */
+  top: 16px;                    /* общий Y от верхнего края плашки */
+  font-size: 18px;              /* размер эмодзи (подгони по вкусу) */
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(0,209,255,.35)); /* лёгкий неон */
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Заголовок и текст выровнены, чтобы не залезали в колонку эмодзи */
+.steps .step h3,
+.steps .step p{
+  margin-left: 0;               /* на случай прежних отступов */
+}
+/* === Centered headings & text in #trust with icon pinned left === */
+.trust__item{
+  position: relative;                  /* нужно для абсолютной иконки */
+  padding: 18px 16px 16px 82px;        /* даём место слева под эмодзи */
+  text-align: center;                  /* центрируем h3 и p */
+}
+
+.trust__icon{
+  position: absolute;                  /* фиксируем в левом верхнем углу */
+  left: 18px;
+  top: 18px;
+  margin: 0;                           /* перекрываем старый margin-bottom */
+  font-size: 26px;                     /* размер иконки */
+  line-height: 1;
+  filter: drop-shadow(0 0 10px var(--neon));
+  pointer-events: none;
+  user-select: none;
+}
+
+.trust__item h3,
+.trust__item p{
+  margin-left: 0;                      /* на случай прежних отступов */
+  text-align: center;                  /* явно центрируем текст */
+}
+
+/* Чуть более выразительный заголовок — по желанию */
+.trust__item h3{
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* На узких экранах даём чуток меньше отступ слева, чтобы тексту было проще */
+@media (max-width: 600px){
+  .trust__item{ padding-left: 70px; }
+}
+/* Убираем лишний зазор между .steps и .trust */
+.steps {
+  margin-bottom: 18px;   /* было 34px auto — делаем меньше */
+}
+
+.trust {
+  margin-top: 0;         /* убираем верхний отступ */
+}
+/* Кнопка-аккордеон для отзывов */
+.reviews { margin: 20px auto; }
+.reviews-collapsible {
+  display: grid;
+  justify-items: center;
+}
+
+/* summary как кнопка — убираем маркер и делаем по центру */
+.reviews-collapsible > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+.reviews-collapsible > summary::-webkit-details-marker { display: none; }
+
+/* отступ сетки, когда раскрыто */
+.reviews-collapsible[open] .reviews__grid { margin-top: 14px; }
+
+/* вспомогательный класс: визуально скрыть, но оставить для скринридеров */
+.sr-only{
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
