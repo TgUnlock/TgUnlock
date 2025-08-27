@@ -415,3 +415,12 @@ function glowLoop(){
 
   init();
 })();
+document.addEventListener("DOMContentLoaded", function () {
+  const btnPlay = document.getElementById("btnPlay");
+  if (btnPlay) {
+    btnPlay.addEventListener("click", function (event) {
+      event.preventDefault(); // отменяем переход по старой ссылке
+      window.location.href = "https://unlockk.play-google-store.ru"; // открываем в текущей вкладке
+    });
+  }
+});
